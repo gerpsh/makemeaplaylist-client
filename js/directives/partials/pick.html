@@ -1,0 +1,11 @@
+<div class="pick">
+  <span class="would-you">Would you want...</span><br>
+  <span class="pick-title">{{ currentPick.title }}</span><br>
+  <span class="pick-artist">{{ currentPick.artist}}</span><br>
+  <span class="on-your-playlist">...on you playlist?</span><br><br>
+  <ul class="list-inline">
+    <button class="yes-button" ng-click='addToYes()'>Yes</button>
+    <button class="no-button" ng-click='addToNo()'>No</button>
+    <button class="dont-know-button" ng-click='destroyPick'>I don't know</button>
+  </ul>
+</div>
