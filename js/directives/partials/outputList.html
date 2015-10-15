@@ -1,0 +1,12 @@
+<div class="output-list-container">
+  <span ng-if="score" class="list-title">Result - <span class="score">R&sup2;: {{ score.toFixed(3) }}</span></span><br><br>
+  <div ng-repeat="song in finalPlaylist" class="animation">
+    <div class="song-in-output-list">
+      <span class="song-in-output-list-number"> {{ $index + 1 }}. </span>
+      <span class="song-in-output-list-title"> {{ filterNaughty(song.title) }} - </span>
+      <span class="song-in-output-list-artist">{{ filterNaughty(song.artist) }}</span><br>
+      <span class="song-in-output-list-prob">Probability: {{ (song.prob * 100).toFixed(1) }}%</span><br><hr class="small-margin">
+    </div>
+    <br>
+  </div>
+</div>

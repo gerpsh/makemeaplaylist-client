@@ -1,9 +1,10 @@
 <div class="yes-list">
-  <span class="list-title">Yes</span><br><br>
-  <div ng-repeat="pick in yesPicks">
-    <div class="pick-in-list">
-      <span class="pick-in-list-title">{{ pick.title }}</span><br>
-      <span class="pick-in-list-artist">{{ pick.artist }}</span><br>
+  <span class="list-title">Yes - {{yesPicks.length}} Songs</span><br><br>
+  <div ng-repeat="pick in yesPicks" class="animation">
+    <div class="pick-in-yes-list">
+      <span class="pick-in-list-title">{{ filterNaughty(pick.title) }}</span><br>
+      <span class="pick-in-list-artist">{{ filterNaughty(pick.artist) }}</span><br>
     </div>
+    <br>
   </div>
 </div>

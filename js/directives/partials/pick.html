@@ -1,11 +1,44 @@
 <div class="pick">
+  <br>
   <span class="would-you">Would you want...</span><br>
-  <span class="pick-title">{{ currentPick.title }}</span><br>
-  <span class="pick-artist">{{ currentPick.artist}}</span><br>
-  <span class="on-your-playlist">...on you playlist?</span><br><br>
+  <span class="pick-title animation" ng-click="playSong()">{{ filterNaughty(currentPick.title) }} </span><button class="pure-button skip-button" ng-click="jumpAudio()">+5s</button><br>
+  <span class="pick-artist animation">by {{ filterNaughty(currentPick.artist) }}</span><br>
+  <span class="on-your-playlist">...on your playlist?</span>
+  <a id="attr-btn" class="pure-button" role="button" data-toggle="collapse" href="#pickAttributes" aria-expanded="false" aria-controls="pickAttributes">
+  &rarr;</a>
+  <br>
+  <div class="collapse" id="pickAttributes">
+    <table id="attr-table" class="table table-hover table-striped song-attr-table">
+      <tr>
+        <td class="table-lable">Song Hotness</td>
+        <td>{{ currentPick.songHotness }}</td>
+      </tr>
+      <tr>
+        <td class="table-lable">Artist Hotness</td>
+        <td>{{ currentPick.artistHotness }}</td>
+      </tr>
+      <tr>
+        <td class="table-lable">Artist Familiarity</td>
+        <td>{{ currentPick.artistFamiliarity }}</td>
+      </tr>
+      <tr>
+        <td class="table-lable">Danceability</td>
+        <td>{{ currentPick.danceability }}</td>
+      </tr>
+      <tr>
+        <td class="table-lable">Energy</td>
+        <td>{{ currentPick.energy }}</td>
+      </tr>
+      <tr>
+        <td class="table-lable">Tempo</td>
+        <td>{{ currentPick.tempo }}</td>
+      </tr>
+    </table>
+  </div>
+  <br>
   <ul class="list-inline">
-    <button class="yes-button" ng-click='addToYes()'>Yes</button>
-    <button class="no-button" ng-click='addToNo()'>No</button>
-    <button class="dont-know-button" ng-click='destroyPick'>I don't know</button>
+    <button class="yes-button pure-button" ng-click='addToYes()'>Yes</button>
+    <button class="no-button pure-button" ng-click='addToNo()'>No</button>
+    <button class="dont-know-button pure-button" ng-click='destroyPick()'>I don't know</button>
   </ul>
 </div>

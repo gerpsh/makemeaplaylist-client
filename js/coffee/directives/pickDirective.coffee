@@ -1,4 +1,4 @@
 playlist.directive 'pick', () ->
   restrict: "EA",
   scope: false,
-  templateUrl: 'partials/pick.html'
+  templateUrl: '/js/directives/partials/pick.html'

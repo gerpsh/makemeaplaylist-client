@@ -1,4 +1,4 @@
-playlist.directive 'yesListDirective', () ->
+playlist.directive 'yesList', () ->
   restrict: 'EA',
   scope: false
-  templateUrl: "partials/yesList.html"
+  templateUrl: "/js/directives/partials/yesList.html"

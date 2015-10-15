@@ -1,9 +1,9 @@
 (function() {
-  playlist.directive('noListDirective', function() {
+  playlist.directive('noList', function() {
     return {
       restrict: 'EA',
       scope: false,
-      templateUrl: "partials/noList.html"
+      templateUrl: "/js/directives/partials/noList.html"
     };
   });
 

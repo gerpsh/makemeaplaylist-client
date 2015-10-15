@@ -40,7 +40,8 @@ module.exports = function(grunt) {
           'js/controllers.js': 'js/coffee/controllers.coffee',
           'js/directives/pickDirective.js': 'js/coffee/directives/pickDirective.coffee',
           'js/directives/yesListDirective.js': 'js/coffee/directives/yesListDirective.coffee',
-          'js/directives/noListDirective.js': 'js/coffee/directives/noListDirective.coffee'
+          'js/directives/noListDirective.js': 'js/coffee/directives/noListDirective.coffee',
+          'js/directives/outputList.js': 'js/coffee/directives/outputList.coffee'
         }
       }
     }

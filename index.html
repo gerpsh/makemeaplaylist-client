@@ -1,39 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="playlist">
   <head>
+    <title>Make Me a Playlist</title>
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/c3/c3.css" />
     <!-- endbower -->
+    <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap-theme.min.css' />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css" />
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/c3/c3.js"></script>
+    <script src="bower_components/c3-angular/c3-angular.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="js/pickDirective.js"></script>
-    <script src="js/noListDirective.js"></script>
-    <script src="js/yesListDirective.js"></script>
-    <script src="main.js"></script>
+    <script src="js/directives/pickDirective.js"></script>
+    <script src="js/directives/noListDirective.js"></script>
+    <script src="js/directives/yesListDirective.js"></script>
+    <script src="js/directives/outputList.js"></script>
   </head>
-  <body>
+  <body ng-controller="mainController">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12" id="header-container">
+          <span class="header-text">&#9836; Make Me A Playlist &#9836;</span>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2" id="yes-column-container">
+        <div class="col-md-3" id="yes-column-container">
+          <yes-list></yes-list>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8" id="middle-column-container">
+        <div class="col-md-6" id="middle-column-container">
+          <div class="row">
+            <div class="col-md-12" id="pick-container">
+              <pick></pick>
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-md-5" id="chart">
+              <div class="row">
+                <div class="col-md-12 tempo-container">
+                  <span class="avg-tempo">Average Tempo: {{ averageTempo }}</span><br><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 chart-container">
+                  <c3chart bindto-id="summary-chart" chart-data="chartDataPoints" chart-columns="chartColumns" sort-data="null">
+                      <chart-size chart-width="200" chart-height="300"/>
+                      <chart-legend show-legend="true"/>
+                      <chart-bar expand="true" width="30" show-label="false"/>
+                  </c3chart>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7" id="output-container">
+              <label for="playlist-length">Playlist Length:</label>
+              <input id="playlist-length" type="text" ng-model="playlistLength"><button id="build-btn" class="btn btn-primary" ng-click="submitData()">Build</button>
+              <hr class="small-margin">
+              <output-list></output-list>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2" id="no-column-container">
+        <div class="col-md-3" id="no-column-container">
+          <no-list></no-list>
         </div>
       </div>
     </div>

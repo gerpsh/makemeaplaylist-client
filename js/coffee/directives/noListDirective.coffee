@@ -1,4 +1,4 @@
-playlist.directive 'noListDirective', () ->
+playlist.directive 'noList', () ->
   restrict: 'EA',
   scope: false
-  templateUrl: "partials/noList.html"
+  templateUrl: "/js/directives/partials/noList.html"

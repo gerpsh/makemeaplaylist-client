@@ -1,1 +1,1 @@
-var playlist = angular.module('playlist', []);
+var playlist = angular.module('playlist', ['ngAnimate', 'gridshore.c3js.chart']);

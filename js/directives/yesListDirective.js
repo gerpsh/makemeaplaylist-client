@@ -1,9 +1,9 @@
 (function() {
-  playlist.directive('yesListDirective', function() {
+  playlist.directive('yesList', function() {
     return {
       restrict: 'EA',
       scope: false,
-      templateUrl: "partials/yesList.html"
+      templateUrl: "/js/directives/partials/yesList.html"
     };
   });
 
